@@ -44,7 +44,7 @@ class _manState extends State<man> {
                     if (global.pic1 == null)
                       Icon(
                         Icons.add_a_photo_outlined,
-                        color: Colors.purple,
+                        color: const Color.fromARGB(255, 80, 75, 81),
                         size: 30,
                       )
                     else

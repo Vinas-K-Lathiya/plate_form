@@ -1,3 +1,5 @@
+import 'dart:io';
+import 'package:ch_2/global.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +21,17 @@ class _chatsState extends State<chats> {
                 itemCount: Contactprovider.allcontact.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    leading: CircleAvatar(),
+                    leading: (global.pic1 == null)?
+                      Icon(
+                        Icons.add_a_photo_outlined,
+                        color: const Color.fromARGB(255, 80, 75, 81),
+                        size: 30,
+                      )
+                    :
+                      CircleAvatar(
+                        radius: 50,
+                        foregroundImage: FileImage(File(global.pic1!.path)),
+                      ),
                     title: Padding(
                       padding: EdgeInsets.only(left: 20.0),
                       child: Text(
